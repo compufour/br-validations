@@ -468,8 +468,7 @@ describe('br-validations', function(){
 					done();
 				});
 			});
-			describe('- TO', function() {
-				var uf = 'TO';
+			describe('TO: 11 digits', function() {
 				it('should validate 29010227836', function(done) {
 					should(BrV.ie(uf).validate('29010227836')).be.true;
 					done();
@@ -480,6 +479,16 @@ describe('br-validations', function(){
 				});
 				it('should invalidate 29090227836', function(done) {
 					should(BrV.ie(uf).validate('29090227836')).be.false;
+					done();
+				});
+			});
+			describe('TO: 9 digits', function() {
+				it('should validate 290227836', function(done) {
+					should(BrV.ie(uf).validate('290227836')).be.true();
+					done();
+				});
+				it('should invalidate 210227836', function(done) {
+					should(BrV.ie(uf).validate('210227836')).be.false();
 					done();
 				});
 			});
