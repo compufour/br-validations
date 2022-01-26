@@ -585,12 +585,10 @@ IErules.TO = [{
 	validate: function(value) { return validateIE(value, this); }
 },
 {
-	// {mask: new StringMask('00000000000'),
 	chars: 9,
-	match: /^[0-9]{2}((0[123])|(99))/,
 	dvs: [{
 		dvpos: 8,
-		pesos: [9,8,7,6,5,4,3,2,0],
+		pesos: [9,8,7,6,5,4,3,2],
 		algorithmSteps: ['onlyNumbers', 'normalSum', 'mod11', 'minusRestOf11']
 	}],
 	validate: function(value) { return validateIE(value, this); }
