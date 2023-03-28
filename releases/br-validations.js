@@ -632,7 +632,6 @@ IErules.RR = [{
 IErules.GO = [{
 	// {mask: new StringMask('00.000.000-0')
 	chars: 9,
-	match: /^1[015]/,
 	dvs: [{
 		dvpos: 8,
 		pesos: [9,8,7,6,5,4,3,2],
