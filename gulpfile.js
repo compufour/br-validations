@@ -14,7 +14,7 @@ var path = {
 	}
 }
 
-gulp.task('build', function(done) {
+gulp.task('build', async function(done) {
 	var pkg = require('./package.json');
 
 	var header = ['/**',
@@ -61,14 +61,14 @@ gulp.task('build', function(done) {
 	done();
 });
 
-gulp.task('jshint', function(done) {
+gulp.task('jshint', async function(done) {
 	gulp.src(path.src.files)
 	.pipe(plugins.jshint('.jshintrc'))
 	.pipe(plugins.jshint.reporter(jshintReporter));
 	done();
 });
 
-gulp.task('runtestdot', function() {
+gulp.task('runtestdot', async function() {
 	gulp.src(path.test.files, {read: false})
 	.pipe(plugins.mocha({
 		reporter: 'dot'
@@ -76,7 +76,7 @@ gulp.task('runtestdot', function() {
 	.on('error', console.warn.bind(console));
 });
 
-gulp.task('runtest', function() {
+gulp.task('runtest', async function() {
 	gulp.src(path.test.files, {read: false})
 	.pipe(plugins.mocha({
 		reporter: 'spec'
@@ -84,12 +84,12 @@ gulp.task('runtest', function() {
 	.on('error', console.warn.bind(console));
 });
 
-gulp.task('default', ['jshint', 'build', 'runtestdot'], function() {
-    gulp.watch(path.src.files, ['jshint', 'build', 'runtestdot']);
-});
+gulp.task('default', gulp.series(['jshint', 'build', 'runtestdot'], function() {
+    gulp.watch(path.src.files, gulp.series(['jshint', 'build', 'runtestdot']));
+}));
 
-gulp.task('test', ['jshint', 'build', 'runtest']);
+gulp.task('test', gulp.series(['jshint', 'build', 'runtest']));
 
-gulp.task('test-watch', ['jshint', 'build', 'runtest'], function() {
-    gulp.watch(path.src.files, ['jshint', 'build', 'runtest']);
-});
+gulp.task('test-watch', gulp.series(['jshint', 'build', 'runtest'], function() {
+    gulp.watch(path.src.files, gulp.series(['jshint', 'build', 'runtest']));
+}));

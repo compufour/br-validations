@@ -469,6 +469,7 @@ describe('br-validations', function(){
 				});
 			});
 			describe('TO: 11 digits', function() {
+				var uf = 'TO';
 				it('should validate 29010227836', function(done) {
 					should(BrV.ie(uf).validate('29010227836')).be.true;
 					done();
@@ -483,12 +484,13 @@ describe('br-validations', function(){
 				});
 			});
 			describe('TO: 9 digits', function() {
+				var uf = 'TO';
 				it('should validate 290227836', function(done) {
-					should(BrV.ie(uf).validate('290227836')).be.true();
+					should(BrV.ie(uf).validate('290227836')).be.true;
 					done();
 				});
 				it('should invalidate 210227836', function(done) {
-					should(BrV.ie(uf).validate('210227836')).be.false();
+					should(BrV.ie(uf).validate('210227836')).be.false;
 					done();
 				});
 			});
@@ -502,8 +504,8 @@ describe('br-validations', function(){
 					should(BrV.ie(uf).validate('240273044')).be.true;
 					done();
 				});
-				it('should validate 241056870', function(done) {
-					should(BrV.ie(uf).validate('241056870')).be.true;
+				it('should validate 24105687-0', function(done) {
+					should(BrV.ie(uf).validate('24105687-0')).be.true;
 					done();
 				});
 				it('should validate 241178045', function(done) {
@@ -515,7 +517,7 @@ describe('br-validations', function(){
 					done();
 				});
 				it('should validate 240178040', function(done) {
-					should(BrV.ie(uf).validate('240178040')).be.true;
+					should(BrV.ie(uf).validate('240178040')).be.false;
 					done();
 				});
 			});

@@ -25,6 +25,12 @@ A library of validations applicable to several Brazilian data like I.E., CNPJ, C
 	gulp test
 ```
 
+### Build ###
+
+```bash
+	gulp build
+```
+
 ## Validations ##
 
 ### Inscrição Estadual ###
