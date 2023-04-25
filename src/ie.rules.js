@@ -508,7 +508,7 @@ IErules.TO = [{
 IErules.AL = [{
 	// {mask: new StringMask('000000000')
 	chars: 9,
-	match: /^24[03578]/,
+	match: /^24/,
 	dvs: [{
 		dvpos: 8,
 		pesos: [9,8,7,6,5,4,3,2],
