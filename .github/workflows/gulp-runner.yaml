@@ -3,15 +3,17 @@ name: Run gulp tasks
 # Controls when the action will run.
 on:
   push:
-    branches: ["master"]
+    branches: ["*"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 12
-      - run: npm ci
-      - run: gulp test
+          node-version: 16
+      - run: |
+          npm install
+          gulp build
+          gulp test
