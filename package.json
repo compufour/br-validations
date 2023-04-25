@@ -29,15 +29,15 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.7.0",
-    "gulp-concat": "^2.3.4",
-    "gulp-footer": "^1.0.5",
-    "gulp-header": "^1.0.5",
-    "gulp-jshint": "^1.6.1",
-    "gulp-load-plugins": "^0.5.3",
-    "gulp-mocha": "^1.0.0",
-    "gulp-uglify": "^0.3.2",
-    "jshint-stylish": "^0.2.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-footer": "^2.1.0",
+    "gulp-header": "^2.0.9",
+    "gulp-jshint": "^2.1.0",
+    "gulp-load-plugins": "^2.0.8",
+    "gulp-mocha": "^8.0.0",
+    "gulp-uglify": "^3.0.2",
+    "jshint-stylish": "^2.2.1",
     "should": "^4.0.1"
   }
 }
