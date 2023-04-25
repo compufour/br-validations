@@ -502,16 +502,20 @@ describe('br-validations', function(){
 					should(BrV.ie(uf).validate('240273044')).be.true;
 					done();
 				});
-				it('should invalidate 241178045', function(done) {
-					should(BrV.ie(uf).validate('241178045')).be.false;
+				it('should validate 241056870', function(done) {
+					should(BrV.ie(uf).validate('241056870')).be.true;
+					done();
+				});
+				it('should validate 241178045', function(done) {
+					should(BrV.ie(uf).validate('241178045')).be.true;
 					done();
 				});
 				it('should invalidate 213178044', function(done) {
 					should(BrV.ie(uf).validate('213178044')).be.false;
 					done();
 				});
-				it('should invalidate 240178040', function(done) {
-					should(BrV.ie(uf).validate('240178040')).be.false;
+				it('should validate 240178040', function(done) {
+					should(BrV.ie(uf).validate('240178040')).be.true;
 					done();
 				});
 			});
